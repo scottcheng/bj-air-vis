@@ -5,8 +5,8 @@ var vis = function(data) {
       all: 'All',
       no2: 'NO2',
       so2: 'SO2',
-      pm2_5: 'PM 2.5',
-      pm10: 'PM 10'
+      pm2_5: 'PM2.5',
+      pm10: 'PM10'
     };
     return function(codename) {
       return mapping[codename];
@@ -17,8 +17,8 @@ var vis = function(data) {
       all: 'All Pollutants',
       no2: 'NO<sub>2</sub>',
       so2: 'SO<sub>2</sub>',
-      pm2_5: 'PM 2.5',
-      pm10: 'PM 10'
+      pm2_5: 'PM<sub>2.5</sub>',
+      pm10: 'PM<sub>10</sub>'
     };
     return function(codename) {
       return mapping[codename];
@@ -181,8 +181,6 @@ var vis = function(data) {
 
     return data;
   })();
-
-  console.log(data);
 
   var controller = (function() {
     var controller = {};
@@ -601,7 +599,7 @@ var vis = function(data) {
             return dy * i - 3;
           })
           .text(function(d) {
-            return textPollutant(d);
+            return textPollutant(d);  // TODO subscript http://www.svgbasics.com/font_effects_italic.html
           });
     })();
 
@@ -790,7 +788,7 @@ var vis = function(data) {
         .html(function(d) {
           return htmlPollutant(d);
         })
-        .style('border-top-color', function(d) {
+        .style('border-color', function(d) {
           return colors[d][5];
         })
         .on('click', function(d) {

@@ -166,12 +166,14 @@ body {
   text-align: center;
 }
 .content #vis #pollutant-selector .pollutant {
-  width: 100px;
+  width: 120px;
+  height: 25px;
   display: inline-block;
   text-align: center;
-  padding: 10px 0;
+  padding: 12px 0 0;
   line-height: 12px;
   border-top: 5px solid;
+  border-bottom: 2px solid;
   cursor: pointer;
   opacity: 0.5;
   -webkit-transition: opacity 0.25s;
