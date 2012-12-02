@@ -1,0 +1,25 @@
+clearfix()
+  display block
+
+  &:after
+    content "."
+    display block
+    clear both
+    visibility hidden
+    line-height 0
+    height 0
+
+.clearfix
+  clearfix()
+
+float-wrapper()
+  & > div,
+  & > nav,
+  & > ul,
+  & > li
+    float left
+  
+  clearfix()
+
+.float-wrapper
+  float-wrapper()

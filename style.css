@@ -1,3 +1,147 @@
+.clearfix {
+  display: block;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.float-wrapper {
+  display: block;
+}
+.float-wrapper > div,
+.float-wrapper > nav,
+.float-wrapper > ul,
+.float-wrapper > li {
+  float: left;
+}
+.float-wrapper:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
 body {
-  font: 10px sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  margin: 0;
+}
+.content {
+  width: 960px;
+  margin: 0 auto;
+}
+.content #vis {
+  height: 600px;
+  background-color: #fff;
+}
+.content #vis #stations {
+  display: block;
+}
+.content #vis #stations > div,
+.content #vis #stations > nav,
+.content #vis #stations > ul,
+.content #vis #stations > li {
+  float: left;
+}
+.content #vis #stations:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.content #vis #stations #map-wrapper {
+  width: 522px;
+}
+.content #vis #stations #map-wrapper svg.map path {
+  cursor: pointer;
+  fill: #fff;
+  stroke: #fff;
+  stroke-linejoin: round;
+  stroke-width: 1px;
+  fill-opacity: 0.25;
+  stroke-opacity: 0.75;
+  -webkit-transition: fill-opacity 0.25s, stroke-width 0.5s;
+  -moz-transition: fill-opacity 0.25s, stroke-width 0.5s;
+  -ms-transition: fill-opacity 0.25s, stroke-width 0.5s;
+  -o-transition: fill-opacity 0.25s, stroke-width 0.5s;
+  transition: fill-opacity 0.25s, stroke-width 0.5s;
+}
+.content #vis #stations #map-wrapper svg.map path:hover {
+  fill-opacity: 0.5;
+}
+.content #vis #stations #map-wrapper svg.map path.active {
+  fill-opacity: 0.75;
+  stroke-width: 2px;
+  cursor: auto;
+}
+.content #vis #stations #map-wrapper svg.map circle.location {
+  cursor: pointer;
+  fill-opacity: 0.25;
+  stroke-opacity: 0;
+  -webkit-transition: fill-opacity 0.25s, stroke-opacity 0.5s;
+}
+.content #vis #stations #map-wrapper svg.map circle.location:hover {
+  fill-opacity: 0.5;
+}
+.content #vis #stations #map-wrapper svg.map circle.location.active {
+  fill-opacity: 0.75;
+  cursor: auto;
+  stroke-width: 1.5px;
+  stroke-opacity: 0.75;
+}
+.content #vis #stations #station {
+  width: 418px;
+  margin-left: 20px;
+}
+.content #vis #stations #station h2 {
+  text-align: center;
+  font-size: 25px;
+  color: #888;
+  font-weight: normal;
+  margin: 0;
+}
+.content #vis #stations #station #radial-wrapper svg.radial path {
+  stroke-width: 1px;
+  stroke: #fff;
+  fill: #fff;
+  opacity: 0.5;
+  -webkit-transition: opacity 0.25s;
+  -moz-transition: opacity 0.25s;
+  -ms-transition: opacity 0.25s;
+  -o-transition: opacity 0.25s;
+  transition: opacity 0.25s;
+  cursor: pointer;
+}
+.content #vis #stations #station #radial-wrapper svg.radial path:hover,
+.content #vis #stations #station #radial-wrapper svg.radial path.active {
+  opacity: 1;
+}
+.content #vis #stations #station #radial-wrapper svg.radial path.active {
+  cursor: auto;
+}
+.content #vis #stations #station #tiles-wrapper svg.tiles rect {
+  fill: #fff;
+}
+.content #vis #pollutant-selector {
+  clear: both;
+  margin-top: 20px;
+  text-align: center;
+}
+.content #vis #pollutant-selector .pollutant {
+  width: 100px;
+  display: inline-block;
+  text-align: center;
+  padding: 15px 0;
+  line-height: 12px;
+  border-top: 5px solid;
+  cursor: pointer;
+}
+.content #vis #pollutant-selector .pollutant.active {
+  font-weight: bold;
 }

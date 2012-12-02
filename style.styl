@@ -1,2 +1,97 @@
+@import 'lib/mixins.styl'
+@import 'lib/stybr.styl'
+
+
 body
-  font 10px sans-serif
+  font-family 'Helvetica Neue', Helvetica, sans-serif
+  // background-color #eee
+  margin 0
+
+.content
+  width 960px
+  margin 0 auto
+
+  #vis
+    height 600px
+    background-color #fff
+
+    #stations
+      float-wrapper()
+
+      #map-wrapper
+        width 522px
+        svg.map
+          path
+            cursor pointer
+            fill #fff
+            stroke #fff
+            stroke-linejoin round
+            stroke-width 1px
+            fill-opacity .25
+            stroke-opacity .75
+            transition fill-opacity .25s, stroke-width .5s
+            &:hover
+              fill-opacity .5
+            &.active
+              fill-opacity .75
+              stroke-width 2px
+              cursor auto
+
+          circle.location
+            cursor pointer
+            fill-opacity .25
+            stroke-opacity 0
+            -webkit-transition fill-opacity .25s, stroke-opacity .5s
+            &:hover
+              fill-opacity .5
+            &.active
+              fill-opacity .75
+              cursor auto
+              stroke-width 1.5px
+              stroke-opacity .75
+
+      #station
+        width 418px
+        margin-left 20px
+
+        h2
+          text-align center
+          font-size 25px
+          color #888
+          font-weight normal
+          margin 0
+
+        #radial-wrapper
+          svg.radial
+            path
+              stroke-width 1px
+              stroke #fff
+              fill #fff
+              opacity .5
+              transition opacity .25s
+              cursor pointer
+              &:hover,
+              &.active
+                opacity 1
+              &.active
+                cursor auto
+
+        #tiles-wrapper
+          svg.tiles
+            rect
+              fill #fff
+
+    #pollutant-selector
+      clear both
+      margin-top 20px
+      text-align center
+      .pollutant
+        width 100px
+        display inline-block
+        text-align center
+        padding 15px 0
+        line-height 12px
+        border-top 5px solid
+        cursor pointer
+        &.active
+          font-weight bold

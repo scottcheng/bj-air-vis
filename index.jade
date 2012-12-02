@@ -7,5 +7,22 @@ html
     meta(name='description', content='')
     link(href='style.css', rel='stylesheet')
   body
+    .content
+      h1 Visualization of Beijing Air Quality
+      #vis
+        #stations
+          #map-wrapper
+            svg.map
+          #station
+            h2#station-name
+            #radial-wrapper
+              //- legend
+              svg.radial
+            #tiles-wrapper
+              svg.tiles
+        #pollutant-selector
+        //- #overall
+          svg#parallel
     script(src='lib/d3.v2.min.js')
+    script(src='lib/colorbrewer.js')
     script(src='air-vis.js')
