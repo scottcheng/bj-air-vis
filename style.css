@@ -32,11 +32,20 @@ body {
 }
 .content {
   width: 960px;
+  padding: 0 20px;
   margin: 0 auto;
 }
+.content h1 {
+  margin-top: 20px;
+  color: #555;
+}
 .content #vis {
+  margin-top: 60px;
   height: 600px;
   background-color: #fff;
+}
+.content #vis .legend-element {
+  font-size: 10px;
 }
 .content #vis #stations {
   display: block;
@@ -95,9 +104,17 @@ body {
   stroke-width: 1.5px;
   stroke-opacity: 0.75;
 }
+.content #vis #stations #map-wrapper svg.map .legend circle.legend-element {
+  fill: #bdbdbd;
+  opacity: 0.5;
+}
+.content #vis #stations #map-wrapper svg.map .legend text.legend-element {
+  fill: #737373;
+}
 .content #vis #stations #station {
   width: 418px;
   margin-left: 20px;
+  position: relative;
 }
 .content #vis #stations #station h2 {
   text-align: center;
@@ -105,8 +122,11 @@ body {
   color: #888;
   font-weight: normal;
   margin: 0;
+  position: absolute;
+  top: 5px;
+  left: 0;
 }
-.content #vis #stations #station #radial-wrapper svg.radial path {
+.content #vis #stations #station #radial-wrapper svg.radial path.layer {
   stroke-width: 1px;
   stroke: #fff;
   fill: #fff;
@@ -118,19 +138,27 @@ body {
   transition: opacity 0.25s;
   cursor: pointer;
 }
-.content #vis #stations #station #radial-wrapper svg.radial path:hover,
-.content #vis #stations #station #radial-wrapper svg.radial path.active {
+.content #vis #stations #station #radial-wrapper svg.radial path.layer:hover,
+.content #vis #stations #station #radial-wrapper svg.radial path.layer.active {
   opacity: 1;
 }
-.content #vis #stations #station #radial-wrapper svg.radial path.active {
+.content #vis #stations #station #radial-wrapper svg.radial path.layer.active {
   cursor: auto;
+}
+.content #vis #stations #station #radial-wrapper svg.radial .legend path.legend-element {
+  fill: none;
+  stroke: #bdbdbd;
+}
+.content #vis #stations #station #radial-wrapper svg.radial .legend text.legend-element {
+  fill: #737373;
+  text-anchor: middle;
 }
 .content #vis #stations #station #tiles-wrapper svg.tiles rect {
   fill: #fff;
 }
 .content #vis #pollutant-selector {
   clear: both;
-  margin-top: 20px;
+  margin-top: 40px;
   text-align: center;
 }
 .content #vis #pollutant-selector .pollutant {

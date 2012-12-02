@@ -1,8 +1,20 @@
 var vis = function(data) {
   var POLLUTANTS = ['no2', 'so2', 'pm2_5', 'pm10'];
-  var htmlPollutant = (function() {
+  var textPollutant = (function() {
     var mapping = {
       all: 'All',
+      no2: 'NO2',
+      so2: 'SO2',
+      pm2_5: 'PM 2.5',
+      pm10: 'PM 10'
+    };
+    return function(codename) {
+      return mapping[codename];
+    };
+  })();
+  var htmlPollutant = (function() {
+    var mapping = {
+      all: 'All Pollutants',
       no2: 'NO<sub>2</sub>',
       so2: 'SO<sub>2</sub>',
       pm2_5: 'PM 2.5',
@@ -257,9 +269,9 @@ var vis = function(data) {
     var map = {};
 
     var margin = {
-      top: 20,
+      top: 5,
       right: 5,
-      bottom: 20,
+      bottom: 5,
       left: 5
     };
     var ratio = .6;
@@ -322,6 +334,61 @@ var vis = function(data) {
     mapSVG.on('click', function() {
       controller.deselectStation();
     });
+
+    // draw legend
+    (function() {
+      var dy = 22;
+
+      var mapLegend = d3.select('svg.map')
+        .append('g')
+          .attr('class', 'legend')
+          .attr('transform', 'translate(15, 20)');
+      var legendData = [
+        {
+          value: 15,
+          desc: 'Most polluted'
+        },
+        {
+          value: 13,
+          desc: ''
+        },
+        {
+          value: 11,
+          desc: ''
+        },
+        {
+          value: 9,
+          desc: ''
+        },
+        {
+          value: 7,
+          desc: 'Least polluted'
+        }
+      ];
+      mapLegend.selectAll('circle.legend-element')
+        .data(legendData)
+        .enter().append('circle')
+          .attr('class', 'legend-element')
+          .attr('cx', 0)
+          .attr('cy', function(d, i) {
+            return i * dy;
+          })
+          .attr('r', function(d) {
+            return d.value;
+          });
+      mapLegend.selectAll('text.legend-element')
+        .data(legendData)
+        .enter().append('text')
+          .attr('class', 'legend-element')
+          .attr('x', 20)
+          .attr('y', function(d, i) {
+            return i * dy;
+          })
+          .attr('dy', '.375em')
+          .text(function(d) {
+            return d.desc;
+          });
+    })();
 
     map.plot = function(opt) {
       var pollutantKey = opt.pollutant;
@@ -393,12 +460,12 @@ var vis = function(data) {
     });
 
     var width = 418;
-    var height = 320;
+    var height = 325;
     var radialSVG = d3.select('svg.radial')
       .attr('wdith', width)
       .attr('height', height)
       .append('g')
-      .attr('transform', 'translate(' + width / 2 + ',' + height / 2 + ')');
+      .attr('transform', 'translate(' + (width / 2) + ',' + (height / 2 + 5) + ')');
 
     var outerRadius = width / 2;
     var innerRadius = 25;
@@ -461,8 +528,82 @@ var vis = function(data) {
           controller.selectPollutant(d.key);
         });
 
-    // TODO change color when mouse over
-    // TODO click to select pollutant
+    // draw time scales
+    (function() {
+      var radialTimeScale = d3.select('svg.radial')
+        .append('g')
+          .attr('class', 'legend time-scale');
+      var textClass = 'legend-element time-scale';
+      radialTimeScale
+        .append('text')
+        .attr('class', textClass)
+        .text('0:00')
+        .attr('x', width / 2)
+        .attr('y', height / 2 - 20)
+        .attr('dy', '.375em')
+        .attr('text-anchor', 'middle');
+      radialTimeScale
+        .append('text')
+        .attr('class', textClass)
+        .text('6')
+        .attr('x', width / 2 + 25)
+        .attr('y', height / 2 + 5)
+        .attr('dy', '.375em')
+        .attr('text-anchor', 'middle');
+      radialTimeScale
+        .append('text')
+        .attr('class', textClass)
+        .text('12')
+        .attr('x', width / 2)
+        .attr('y', height / 2 + 30)
+        .attr('dy', '.375em')
+        .attr('text-anchor', 'middle');
+      radialTimeScale
+        .append('text')
+        .attr('class', textClass)
+        .text('18')
+        .attr('x', width / 2 - 25)
+        .attr('y', height / 2 + 5)
+        .attr('dy', '.375em')
+        .attr('text-anchor', 'middle');
+    })();
+
+    // draw legend
+    (function() {
+      var dy = 25;
+      var curveWidth = 50;
+      var curveHeight = 10;
+
+      var radialLegend = d3.select('svg.radial')
+        .append('g')
+          .attr('class', 'legend')
+          .attr('transform', 'translate(' + (width - curveWidth) + ',5)');
+      var legendData = [''];
+      var len = POLLUTANTS.length;
+      for (var i = len - 1; i >= 0; i--) {
+        legendData.push(POLLUTANTS[i]);
+      }
+      radialLegend.selectAll('path.legend-element')
+        .data(legendData)
+        .enter().append('path')
+          .attr('class', 'legend-element')
+          .attr('d', function(d, i) {
+            return 'M 0 ' + (curveHeight + dy * i)
+              + ' q ' + curveWidth / 2 + ' -' + curveHeight + ' '
+              + curveWidth + ' 0';
+          });
+      radialLegend.selectAll('text.legend-element')
+        .data(legendData)
+        .enter().append('text')
+          .attr('class', 'legend-element')
+          .attr('x', curveWidth / 2)
+          .attr('y', function(d, i) {
+            return dy * i - 3;
+          })
+          .text(function(d) {
+            return textPollutant(d);
+          });
+    })();
 
     radial.plot = function(opt) {
       switch (opt.scope) {
@@ -497,7 +638,7 @@ var vis = function(data) {
           })
           .style('fill', function(d, i) {
             if (opt.pollutant === 'all') {
-              return colors.all[2];
+              return colors.all[4];
             } else if (opt.pollutant === d.key) {
               return colors[d.key][4];
             } else {
@@ -514,15 +655,18 @@ var vis = function(data) {
     var tiles = {};
 
     var width = 418;
-    var height = 150;
+    var height = 155;
+    var axisHeight = 15;
+    var axisWidth = 17;
     var tilesSVG = d3.select('svg.tiles')
       .attr('width', width)
       .attr('height', height)
-      .append('g');
+      .append('g')
+      .attr('transform', 'translate(' + axisWidth + ',' + axisHeight + ')');
 
     var gap = 1;
-    var tileWidth = width / 24 - gap;
-    var tileHeight = height / 14 - gap;
+    var tileWidth = (width - axisWidth) / 24 - gap;
+    var tileHeight = (height - axisHeight) / 14 - gap;
 
     // initial plot
     tilesSVG.selectAll('.tile')
@@ -539,6 +683,58 @@ var vis = function(data) {
         .attr('y', function(d) {
           return (d.time.match(/\/\d+\//)[0].substr(1, 2) - 17) * (tileHeight + gap);
         });
+
+    // draw axes
+    (function() {
+      // x axis
+      var xAxis = d3.select('svg.tiles')
+        .append('g')
+          .attr('class', 'legend axis')
+          .attr('transform', 'translate(' + axisWidth + ',' + (axisHeight - 3) + ')');
+      var xData = [];
+      for (var i = 0; i < 24; i++) {
+        xData.push(i);
+      }
+      xAxis.selectAll('text.legend-element.axis-scale')
+        .data(xData)
+        .enter().append('text')
+          .attr('class', 'legend-element axis-scale')
+          .attr('x', function(d, i) {
+            return (tileWidth + gap) * i;
+          })
+          .attr('y', 0)
+          .text(function(d) {
+            if (d % 3 === 0) {
+              return d + ':00';
+            }
+            return '';
+          });
+
+      // y axis
+      var yAxis = d3.select('svg.tiles')
+        .append('g')
+          .attr('class', 'legend axis')
+          .attr('transform', 'translate(0,' + axisHeight + ')');
+      var yData = [];
+      for (var i = 17; i <= 30; i++) {
+        yData.push(i);
+      }
+      yAxis.selectAll('text.legend-element.axis-scale')
+        .data(yData)
+        .enter().append('text')
+          .attr('class', 'legend-element axis-scale')
+          .attr('x', 0)
+          .attr('y', function(d, i) {
+            return (tileHeight + gap) * i + tileHeight / 2;
+          })
+          .attr('dy', '.375em')
+          .text(function(d) {
+            if (d % 3 === 2) {
+              return d;
+            }
+            return '';
+          });
+    })();
 
     tiles.plot = function(opt) {
       switch (opt.scope) {
