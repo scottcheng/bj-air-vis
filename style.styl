@@ -1,27 +1,94 @@
+@import 'lib/reset.css'
 @import 'lib/mixins.styl'
 @import 'lib/stybr.styl'
 
 lightgrey = rgb(189, 189, 189)
 grey = rgb(115, 115, 115)
+darkgrey = rgb(82, 82, 82)
+
+::selection
+  background-color grey
+  color #fff
+  fill #fff
+::-moz-selection
+  background-color grey
+  color #fff
+  fill #fff
 
 body
   font-family 'Helvetica Neue', Helvetica, sans-serif
-  // background-color #eee
+  background-image url(img/grey.png)
+  background-repeat repeat
   margin 0
+  min-width 980px
 
-.content
-  width 960px
-  padding 0 20px
-  margin 0 auto
+  &.pollutant-all
+    .color,
+    a
+      color rgb(66, 146, 198)
+      &:hover
+        color rgb(33, 113, 181)
 
-  h1
-    margin-top 20px
-    color #555
+  &.pollutant-no2
+    .color,
+    a
+      color rgb(65, 171, 93)
+      &:hover
+        color rgb(35, 139, 69)
 
-  #vis
-    margin-top 60px
-    height 600px
-    background-color #fff
+  &.pollutant-so2
+    .color,
+    a
+      color rgb(128, 125, 186)
+      &:hover
+        color rgb(106, 81, 163)
+
+  &.pollutant-pm2_5
+    .color,
+    a
+      color rgb(239, 59, 44)
+      &:hover
+        color rgb(203, 24, 29)
+
+  &.pollutant-pm10
+    .color,
+    a
+      color rgb(241, 105, 19)
+      &:hover
+        color rgb(217, 72, 1)
+
+.color,
+a
+  color inherit
+  transition color .25s
+
+a
+  text-decoration none
+
+h1, h2, h3, h4, h5, h6
+  color darkgrey
+  font-weight normal
+
+header
+  padding 30px 0
+  .content
+    width 960px
+    margin 0 auto
+
+    h1
+      margin 0
+      text-align center
+      font-size 40px
+
+#vis
+  padding 35px 0 20px
+  height 600px
+  background-color rgba(255, 255, 255, .75)
+  box-shadow 0 0 10px rgba(0, 0, 0, .5)
+  .content
+    width 960px
+    padding 0 10px
+    margin 0 auto
 
     .legend-element
       font-size 10px
@@ -76,7 +143,7 @@ body
         h2
           text-align center
           font-size 25px
-          color #888
+          color grey
           font-weight normal
           margin 0
           position absolute
@@ -123,10 +190,23 @@ body
         padding 12px 0 0
         line-height 12px
         border-top 5px solid
-        border-bottom 2px solid
+        border-bottom 3px solid
         cursor pointer
-        opacity .5
+        opacity .25
         transition opacity .25s
+        &:hover
+          opacity .5
         &.active
-          font-weight bold
           opacity 1
+        sub
+          vertical-align sub
+
+#write-up
+  padding 20px 0
+  color darkgrey
+  .content
+    width 720px
+    margin 0 auto
+    p
+      line-height 1.5
+      margin 15px 0

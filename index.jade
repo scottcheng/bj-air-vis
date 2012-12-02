@@ -7,9 +7,14 @@ html
     meta(name='description', content='')
     link(href='style.css', rel='stylesheet')
   body
-    .content
-      h1 Visualization of Beijing Air Pollution
-      #vis
+    header
+      .content
+        h1
+          | Visualization of Beijing 
+          span.color Air 
+          | Pollution
+    section#vis
+      .content
         #stations
           #map-wrapper
             svg.map
@@ -21,8 +26,16 @@ html
             #tiles-wrapper
               svg.tiles
         #pollutant-selector
-        //- #overall
-          svg#parallel
+
+    section#write-up
+      .content
+        :markdown
+          This visualzation demonstrates the intensity of several major pollutants in Beijing during October 17 and October 30, 2012.
+
+
+
+          This is [Scott](http://scottcheng.com/)'s [course assignment](http://vis.pku.edu.cn/wiki/public_course/visclass_f12/assignment/a02/chengye/start) of the [fall 2012 Introduction to Visualization and Visual Computing course](http://vis.pku.edu.cn/wiki/public_course/visclass_f12/start) at Peking University. Data extracted from the [Beijing Municipal Environmental Monitoring Center website](http://www.bjmemc.com.cn/g356.aspx).
+
     
     a(href='https://github.com/scottcheng/bj-air-vis')
       img(

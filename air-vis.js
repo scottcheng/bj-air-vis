@@ -208,6 +208,7 @@ var vis = function(data) {
     controller.init = function(opt) {
       state = opt;
       d3.select('#station-name').text('All Stations');
+      d3.select('body').attr('class', 'pollutant-all');
       render();
     };
 
@@ -231,6 +232,8 @@ var vis = function(data) {
     };
 
     controller.deselectPollutant = function() {
+      d3.select('body').attr('class', 'pollutant-all');
+
       applyOpt({
         pollutant: 'all'
       });
@@ -238,6 +241,8 @@ var vis = function(data) {
     }
 
     controller.selectPollutant = function(pollutant) {
+      d3.select('body').attr('class', 'pollutant-' + pollutant);
+      
       applyOpt({
         pollutant: pollutant
       });
@@ -655,7 +660,7 @@ var vis = function(data) {
     var width = 418;
     var height = 155;
     var axisHeight = 15;
-    var axisWidth = 17;
+    var axisWidth = 20;
     var tilesSVG = d3.select('svg.tiles')
       .attr('width', width)
       .attr('height', height)
@@ -721,17 +726,24 @@ var vis = function(data) {
         .data(yData)
         .enter().append('text')
           .attr('class', 'legend-element axis-scale')
-          .attr('x', 0)
+          .attr('x', axisWidth - 3)
           .attr('y', function(d, i) {
             return (tileHeight + gap) * i + tileHeight / 2;
           })
           .attr('dy', '.375em')
+          .attr('text-anchor', 'end')
           .text(function(d) {
             if (d % 3 === 2) {
               return d;
             }
             return '';
           });
+      yAxis.append('text')
+        .attr('class', 'legend-element axis-scale')
+        .attr('x', axisWidth - 3)
+        .attr('y', -3)
+        .attr('text-anchor', 'end')
+        .text('Oct')
     })();
 
     tiles.plot = function(opt) {
