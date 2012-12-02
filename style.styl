@@ -52,7 +52,7 @@ body
             cursor pointer
             fill-opacity .25
             stroke-opacity 0
-            -webkit-transition fill-opacity .25s, stroke-opacity .5s
+            transition fill-opacity .25s, stroke-opacity .5s
             &:hover
               fill-opacity .5
             &.active
@@ -119,9 +119,12 @@ body
         width 100px
         display inline-block
         text-align center
-        padding 15px 0
+        padding 10px 0
         line-height 12px
         border-top 5px solid
         cursor pointer
+        opacity .5
+        transition opacity .25s
         &.active
           font-weight bold
+          opacity 1

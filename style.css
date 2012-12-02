@@ -94,6 +94,10 @@ body {
   fill-opacity: 0.25;
   stroke-opacity: 0;
   -webkit-transition: fill-opacity 0.25s, stroke-opacity 0.5s;
+  -moz-transition: fill-opacity 0.25s, stroke-opacity 0.5s;
+  -ms-transition: fill-opacity 0.25s, stroke-opacity 0.5s;
+  -o-transition: fill-opacity 0.25s, stroke-opacity 0.5s;
+  transition: fill-opacity 0.25s, stroke-opacity 0.5s;
 }
 .content #vis #stations #map-wrapper svg.map circle.location:hover {
   fill-opacity: 0.5;
@@ -165,11 +169,18 @@ body {
   width: 100px;
   display: inline-block;
   text-align: center;
-  padding: 15px 0;
+  padding: 10px 0;
   line-height: 12px;
   border-top: 5px solid;
   cursor: pointer;
+  opacity: 0.5;
+  -webkit-transition: opacity 0.25s;
+  -moz-transition: opacity 0.25s;
+  -ms-transition: opacity 0.25s;
+  -o-transition: opacity 0.25s;
+  transition: opacity 0.25s;
 }
 .content #vis #pollutant-selector .pollutant.active {
   font-weight: bold;
+  opacity: 1;
 }

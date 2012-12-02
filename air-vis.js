@@ -791,7 +791,7 @@ var vis = function(data) {
           return htmlPollutant(d);
         })
         .style('border-top-color', function(d) {
-          return colors[d][4];
+          return colors[d][5];
         })
         .on('click', function(d) {
           controller.selectPollutant(d);
