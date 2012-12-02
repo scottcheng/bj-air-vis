@@ -551,7 +551,7 @@ var vis = function(data) {
       radialTimeScale
         .append('text')
         .attr('class', textClass)
-        .text('12')
+        .text('12:00')
         .attr('x', width / 2)
         .attr('y', height / 2 + 30)
         .attr('dy', '.375em')
