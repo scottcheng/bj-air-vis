@@ -50,7 +50,7 @@ header .content p.author{color:#737373;margin-top:20px;font-size:14px;text-align
 #vis .content #stations #map-wrapper svg.map .legend circle.legend-element{fill:#bdbdbd;opacity:.5}
 #vis .content #stations #map-wrapper svg.map .legend text.legend-element{fill:#737373}
 #vis .content #stations #station{width:418px;margin-left:20px;position:relative;}
-#vis .content #stations #station h2{font-size:24px;color:#525252;opacity:.75;font-weight:normal;margin:0;position:absolute;top:3px;left:0;max-width:360px;line-height:1.25}
+#vis .content #stations #station h2{font-size:24px;color:#737373;font-weight:normal;margin:0;position:absolute;top:3px;left:0;max-width:360px;line-height:1.25}
 #vis .content #stations #station #radial-wrapper svg.radial path.layer{stroke-width:1px;stroke:#fff;fill:#fff;opacity:.5;-webkit-transition:opacity .25s;-moz-transition:opacity .25s;-ms-transition:opacity .25s;-o-transition:opacity .25s;transition:opacity .25s;cursor:pointer;}
 #vis .content #stations #station #radial-wrapper svg.radial path.layer:hover,#vis .content #stations #station #radial-wrapper svg.radial path.layer.active{opacity:1}
 #vis .content #stations #station #radial-wrapper svg.radial path.layer.active{cursor:auto}
@@ -58,7 +58,7 @@ header .content p.author{color:#737373;margin-top:20px;font-size:14px;text-align
 #vis .content #stations #station #radial-wrapper svg.radial .legend text.legend-element{fill:#737373;text-anchor:middle}
 #vis .content #stations #station #tiles-wrapper svg.tiles rect{fill:#fff}
 #vis .content #pollutant-selector{clear:both;margin-top:40px;text-align:center;}
-#vis .content #pollutant-selector .pollutant{width:140px;display:inline-block;text-align:center;padding:12px 0;line-height:12px;border-top:5px solid;border-bottom:3px solid;cursor:pointer;opacity:.25;-webkit-transition:opacity .25s;-moz-transition:opacity .25s;-ms-transition:opacity .25s;-o-transition:opacity .25s;transition:opacity .25s;}
+#vis .content #pollutant-selector .pollutant{width:140px;display:inline-block;text-align:center;padding:12px 0;line-height:12px;border-top:5px solid;border-bottom:3px solid;cursor:pointer;opacity:.25;-webkit-transition:opacity .25s;-moz-transition:opacity .25s;-ms-transition:opacity .25s;-o-transition:opacity .25s;transition:opacity .25s;color:#525252;}
 #vis .content #pollutant-selector .pollutant:hover{opacity:.5}
 #vis .content #pollutant-selector .pollutant.active{opacity:1}
 #vis .content #pollutant-selector .pollutant sub{vertical-align:sub;font-size:.75em;display:inline-block;margin-bottom:-1em}
