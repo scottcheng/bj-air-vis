@@ -1,431 +1,75 @@
 @import 'lib/reset.css';
-.clearfix {
-  display: block;
-}
-.clearfix:after {
-  content: ".";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  line-height: 0;
-  height: 0;
-}
-.float-wrapper {
-  display: block;
-}
-.float-wrapper > div,
-.float-wrapper > nav,
-.float-wrapper > ul,
-.float-wrapper > li {
-  float: left;
-}
-.float-wrapper:after {
-  content: ".";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  line-height: 0;
-  height: 0;
-}
-::selection {
-  background-color: #737373;
-  color: #fff;
-  fill: #fff;
-}
-::-moz-selection {
-  background-color: #737373;
-  color: #fff;
-  fill: #fff;
-}
-body {
-  font-family: 'Helvetica Neue', Helvetica, sans-serif;
-  background-image: url("img/grey.png");
-  background-repeat: repeat;
-  margin: 0;
-  min-width: 980px;
-}
-body.pollutant-all .color,
-body.pollutant-all a {
-  color: #4292c6;
-}
-body.pollutant-all .color:hover,
-body.pollutant-all a:hover {
-  color: #2171b5;
-}
-body.pollutant-all #write-up h1,
-body.pollutant-all #write-up h2,
-body.pollutant-all #write-up h3,
-body.pollutant-all #write-up h4,
-body.pollutant-all #write-up h5,
-body.pollutant-all #write-up h6 {
-  border-left-color: #4292c6;
-}
-body.pollutant-all #write-up h1:hover,
-body.pollutant-all #write-up h2:hover,
-body.pollutant-all #write-up h3:hover,
-body.pollutant-all #write-up h4:hover,
-body.pollutant-all #write-up h5:hover,
-body.pollutant-all #write-up h6:hover {
-  border-left-color: #2171b5;
-}
-body.pollutant-no2 .color,
-body.pollutant-no2 a {
-  color: #41ab5d;
-}
-body.pollutant-no2 .color:hover,
-body.pollutant-no2 a:hover {
-  color: #238b45;
-}
-body.pollutant-no2 #write-up h1,
-body.pollutant-no2 #write-up h2,
-body.pollutant-no2 #write-up h3,
-body.pollutant-no2 #write-up h4,
-body.pollutant-no2 #write-up h5,
-body.pollutant-no2 #write-up h6 {
-  border-left-color: #41ab5d;
-}
-body.pollutant-no2 #write-up h1:hover,
-body.pollutant-no2 #write-up h2:hover,
-body.pollutant-no2 #write-up h3:hover,
-body.pollutant-no2 #write-up h4:hover,
-body.pollutant-no2 #write-up h5:hover,
-body.pollutant-no2 #write-up h6:hover {
-  border-left-color: #238b45;
-}
-body.pollutant-so2 .color,
-body.pollutant-so2 a {
-  color: #807dba;
-}
-body.pollutant-so2 .color:hover,
-body.pollutant-so2 a:hover {
-  color: #6a51a3;
-}
-body.pollutant-so2 #write-up h1,
-body.pollutant-so2 #write-up h2,
-body.pollutant-so2 #write-up h3,
-body.pollutant-so2 #write-up h4,
-body.pollutant-so2 #write-up h5,
-body.pollutant-so2 #write-up h6 {
-  border-left-color: #807dba;
-}
-body.pollutant-so2 #write-up h1:hover,
-body.pollutant-so2 #write-up h2:hover,
-body.pollutant-so2 #write-up h3:hover,
-body.pollutant-so2 #write-up h4:hover,
-body.pollutant-so2 #write-up h5:hover,
-body.pollutant-so2 #write-up h6:hover {
-  border-left-color: #6a51a3;
-}
-body.pollutant-pm2_5 .color,
-body.pollutant-pm2_5 a {
-  color: #ef3b2c;
-}
-body.pollutant-pm2_5 .color:hover,
-body.pollutant-pm2_5 a:hover {
-  color: #cb181d;
-}
-body.pollutant-pm2_5 #write-up h1,
-body.pollutant-pm2_5 #write-up h2,
-body.pollutant-pm2_5 #write-up h3,
-body.pollutant-pm2_5 #write-up h4,
-body.pollutant-pm2_5 #write-up h5,
-body.pollutant-pm2_5 #write-up h6 {
-  border-left-color: #ef3b2c;
-}
-body.pollutant-pm2_5 #write-up h1:hover,
-body.pollutant-pm2_5 #write-up h2:hover,
-body.pollutant-pm2_5 #write-up h3:hover,
-body.pollutant-pm2_5 #write-up h4:hover,
-body.pollutant-pm2_5 #write-up h5:hover,
-body.pollutant-pm2_5 #write-up h6:hover {
-  border-left-color: #cb181d;
-}
-body.pollutant-pm10 .color,
-body.pollutant-pm10 a {
-  color: #f16913;
-}
-body.pollutant-pm10 .color:hover,
-body.pollutant-pm10 a:hover {
-  color: #d94801;
-}
-body.pollutant-pm10 #write-up h1,
-body.pollutant-pm10 #write-up h2,
-body.pollutant-pm10 #write-up h3,
-body.pollutant-pm10 #write-up h4,
-body.pollutant-pm10 #write-up h5,
-body.pollutant-pm10 #write-up h6 {
-  border-left-color: #f16913;
-}
-body.pollutant-pm10 #write-up h1:hover,
-body.pollutant-pm10 #write-up h2:hover,
-body.pollutant-pm10 #write-up h3:hover,
-body.pollutant-pm10 #write-up h4:hover,
-body.pollutant-pm10 #write-up h5:hover,
-body.pollutant-pm10 #write-up h6:hover {
-  border-left-color: #d94801;
-}
-.color,
-a {
-  color: inherit;
-  -webkit-transition: color 0.25s;
-  -moz-transition: color 0.25s;
-  -ms-transition: color 0.25s;
-  -o-transition: color 0.25s;
-  transition: color 0.25s;
-}
-a {
-  text-decoration: none;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: #525252;
-  font-weight: normal;
-}
-header {
-  padding: 30px 0;
-}
-header .content {
-  width: 960px;
-  margin: 0 auto;
-}
-header .content h1 {
-  margin: 0;
-  text-align: center;
-  font-size: 40px;
-}
-header .content p.author {
-  color: #737373;
-  margin-top: 20px;
-  font-size: 14px;
-  text-align: center;
-  font-style: italic;
-}
-#vis {
-  padding: 35px 0 20px;
-  height: 600px;
-  background-color: rgba(255,255,255,0.75);
-  -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  -moz-box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  -ms-box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  -o-box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
-#vis .content {
-  width: 960px;
-  padding: 0 10px;
-  margin: 0 auto;
-}
-#vis .content .legend-element {
-  font-size: 10px;
-}
-#vis .content #stations {
-  display: block;
-}
-#vis .content #stations > div,
-#vis .content #stations > nav,
-#vis .content #stations > ul,
-#vis .content #stations > li {
-  float: left;
-}
-#vis .content #stations:after {
-  content: ".";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  line-height: 0;
-  height: 0;
-}
-#vis .content #stations #map-wrapper {
-  width: 522px;
-}
-#vis .content #stations #map-wrapper svg.map path {
-  cursor: pointer;
-  fill: #fff;
-  stroke: #fff;
-  stroke-linejoin: round;
-  stroke-width: 1px;
-  fill-opacity: 0.25;
-  stroke-opacity: 0.75;
-  -webkit-transition: fill-opacity 0.25s, stroke-width 0.5s;
-  -moz-transition: fill-opacity 0.25s, stroke-width 0.5s;
-  -ms-transition: fill-opacity 0.25s, stroke-width 0.5s;
-  -o-transition: fill-opacity 0.25s, stroke-width 0.5s;
-  transition: fill-opacity 0.25s, stroke-width 0.5s;
-}
-#vis .content #stations #map-wrapper svg.map path:hover {
-  fill-opacity: 0.5;
-}
-#vis .content #stations #map-wrapper svg.map path.active {
-  fill-opacity: 0.75;
-  stroke-width: 2px;
-  cursor: auto;
-}
-#vis .content #stations #map-wrapper svg.map circle.location {
-  cursor: pointer;
-  fill-opacity: 0.25;
-  stroke-opacity: 0;
-  -webkit-transition: fill-opacity 0.25s, stroke-opacity 0.5s;
-  -moz-transition: fill-opacity 0.25s, stroke-opacity 0.5s;
-  -ms-transition: fill-opacity 0.25s, stroke-opacity 0.5s;
-  -o-transition: fill-opacity 0.25s, stroke-opacity 0.5s;
-  transition: fill-opacity 0.25s, stroke-opacity 0.5s;
-}
-#vis .content #stations #map-wrapper svg.map circle.location:hover {
-  fill-opacity: 0.5;
-}
-#vis .content #stations #map-wrapper svg.map circle.location.active {
-  fill-opacity: 0.75;
-  cursor: auto;
-  stroke-width: 1.5px;
-  stroke-opacity: 0.75;
-}
-#vis .content #stations #map-wrapper svg.map .legend circle.legend-element {
-  fill: #bdbdbd;
-  opacity: 0.5;
-}
-#vis .content #stations #map-wrapper svg.map .legend text.legend-element {
-  fill: #737373;
-}
-#vis .content #stations #station {
-  width: 418px;
-  margin-left: 20px;
-  position: relative;
-}
-#vis .content #stations #station h2 {
-  text-align: center;
-  font-size: 25px;
-  color: #737373;
-  font-weight: normal;
-  margin: 0;
-  position: absolute;
-  top: 5px;
-  left: 0;
-}
-#vis .content #stations #station #radial-wrapper svg.radial path.layer {
-  stroke-width: 1px;
-  stroke: #fff;
-  fill: #fff;
-  opacity: 0.5;
-  -webkit-transition: opacity 0.25s;
-  -moz-transition: opacity 0.25s;
-  -ms-transition: opacity 0.25s;
-  -o-transition: opacity 0.25s;
-  transition: opacity 0.25s;
-  cursor: pointer;
-}
-#vis .content #stations #station #radial-wrapper svg.radial path.layer:hover,
-#vis .content #stations #station #radial-wrapper svg.radial path.layer.active {
-  opacity: 1;
-}
-#vis .content #stations #station #radial-wrapper svg.radial path.layer.active {
-  cursor: auto;
-}
-#vis .content #stations #station #radial-wrapper svg.radial .legend path.legend-element {
-  fill: none;
-  stroke: #bdbdbd;
-}
-#vis .content #stations #station #radial-wrapper svg.radial .legend text.legend-element {
-  fill: #737373;
-  text-anchor: middle;
-}
-#vis .content #stations #station #tiles-wrapper svg.tiles rect {
-  fill: #fff;
-}
-#vis .content #pollutant-selector {
-  clear: both;
-  margin-top: 40px;
-  text-align: center;
-}
-#vis .content #pollutant-selector .pollutant {
-  width: 140px;
-  display: inline-block;
-  text-align: center;
-  padding: 12px 0;
-  line-height: 12px;
-  border-top: 5px solid;
-  border-bottom: 3px solid;
-  cursor: pointer;
-  opacity: 0.25;
-  -webkit-transition: opacity 0.25s;
-  -moz-transition: opacity 0.25s;
-  -ms-transition: opacity 0.25s;
-  -o-transition: opacity 0.25s;
-  transition: opacity 0.25s;
-}
-#vis .content #pollutant-selector .pollutant:hover {
-  opacity: 0.5;
-}
-#vis .content #pollutant-selector .pollutant.active {
-  opacity: 1;
-}
-#vis .content #pollutant-selector .pollutant sub {
-  vertical-align: sub;
-  font-size: 0.75em;
-  display: inline-block;
-  margin-bottom: -1em;
-}
-#write-up {
-  padding: 35px 0 20px;
-  color: #525252;
-}
-#write-up .content {
-  width: 700px;
-  margin: 0 auto;
-}
-#write-up .content b {
-  font-weight: bold;
-}
-#write-up .content i {
-  font-style: italic;
-}
-#write-up .content h2,
-#write-up .content h3,
-#write-up .content h4,
-#write-up .content h5,
-#write-up .content h6 {
-  border-left: solid #bdbdbd;
-  padding-left: 15px;
-  -webkit-transition: border-left-color 0.25s;
-  -moz-transition: border-left-color 0.25s;
-  -ms-transition: border-left-color 0.25s;
-  -o-transition: border-left-color 0.25s;
-  transition: border-left-color 0.25s;
-  line-height: 1.25;
-}
-#write-up .content h2 {
-  font-size: 30px;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  border-left-width: 5px;
-  margin-left: -20px;
-}
-#write-up .content h3 {
-  font-size: 20px;
-  margin-top: 25px;
-  margin-bottom: 15px;
-  border-left-width: 3px;
-  margin-left: -17px;
-}
-#write-up .content p,
-#write-up .content ul {
-  font-size: 15px;
-  line-height: 1.5;
-  margin: 15px 0;
-}
-#write-up .content sub {
-  vertical-align: sub;
-  font-size: 0.75em;
-  display: inline-block;
-  margin-bottom: -1em;
-}
-#write-up .content ul {
-  margin-left: 20px;
-  list-style: circle;
-}
-#write-up .content ul li b {
-  margin-right: 1em;
-}
+.clearfix{display:block;}
+.clearfix:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0}
+.float-wrapper{display:block;}
+.float-wrapper > div,.float-wrapper > nav,.float-wrapper > ul,.float-wrapper > li{float:left}
+.float-wrapper:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0}
+::selection{background-color:#737373;color:#fff;fill:#fff}
+::-moz-selection{background-color:#737373;color:#fff;fill:#fff}
+body{font-family:'Helvetica Neue',Helvetica,sans-serif;background-image:url("img/grey.png");background-repeat:repeat;margin:0;min-width:980px;}
+body.pollutant-all .color,body.pollutant-all a{color:#4292c6;}
+body.pollutant-all .color:hover,body.pollutant-all a:hover{color:#2171b5}
+body.pollutant-all #write-up h1,body.pollutant-all #write-up h2,body.pollutant-all #write-up h3,body.pollutant-all #write-up h4,body.pollutant-all #write-up h5,body.pollutant-all #write-up h6{border-left-color:#4292c6;}
+body.pollutant-all #write-up h1:hover,body.pollutant-all #write-up h2:hover,body.pollutant-all #write-up h3:hover,body.pollutant-all #write-up h4:hover,body.pollutant-all #write-up h5:hover,body.pollutant-all #write-up h6:hover{border-left-color:#2171b5}
+body.pollutant-no2 .color,body.pollutant-no2 a{color:#41ab5d;}
+body.pollutant-no2 .color:hover,body.pollutant-no2 a:hover{color:#238b45}
+body.pollutant-no2 #write-up h1,body.pollutant-no2 #write-up h2,body.pollutant-no2 #write-up h3,body.pollutant-no2 #write-up h4,body.pollutant-no2 #write-up h5,body.pollutant-no2 #write-up h6{border-left-color:#41ab5d;}
+body.pollutant-no2 #write-up h1:hover,body.pollutant-no2 #write-up h2:hover,body.pollutant-no2 #write-up h3:hover,body.pollutant-no2 #write-up h4:hover,body.pollutant-no2 #write-up h5:hover,body.pollutant-no2 #write-up h6:hover{border-left-color:#238b45}
+body.pollutant-so2 .color,body.pollutant-so2 a{color:#807dba;}
+body.pollutant-so2 .color:hover,body.pollutant-so2 a:hover{color:#6a51a3}
+body.pollutant-so2 #write-up h1,body.pollutant-so2 #write-up h2,body.pollutant-so2 #write-up h3,body.pollutant-so2 #write-up h4,body.pollutant-so2 #write-up h5,body.pollutant-so2 #write-up h6{border-left-color:#807dba;}
+body.pollutant-so2 #write-up h1:hover,body.pollutant-so2 #write-up h2:hover,body.pollutant-so2 #write-up h3:hover,body.pollutant-so2 #write-up h4:hover,body.pollutant-so2 #write-up h5:hover,body.pollutant-so2 #write-up h6:hover{border-left-color:#6a51a3}
+body.pollutant-pm2_5 .color,body.pollutant-pm2_5 a{color:#ef3b2c;}
+body.pollutant-pm2_5 .color:hover,body.pollutant-pm2_5 a:hover{color:#cb181d}
+body.pollutant-pm2_5 #write-up h1,body.pollutant-pm2_5 #write-up h2,body.pollutant-pm2_5 #write-up h3,body.pollutant-pm2_5 #write-up h4,body.pollutant-pm2_5 #write-up h5,body.pollutant-pm2_5 #write-up h6{border-left-color:#ef3b2c;}
+body.pollutant-pm2_5 #write-up h1:hover,body.pollutant-pm2_5 #write-up h2:hover,body.pollutant-pm2_5 #write-up h3:hover,body.pollutant-pm2_5 #write-up h4:hover,body.pollutant-pm2_5 #write-up h5:hover,body.pollutant-pm2_5 #write-up h6:hover{border-left-color:#cb181d}
+body.pollutant-pm10 .color,body.pollutant-pm10 a{color:#f16913;}
+body.pollutant-pm10 .color:hover,body.pollutant-pm10 a:hover{color:#d94801}
+body.pollutant-pm10 #write-up h1,body.pollutant-pm10 #write-up h2,body.pollutant-pm10 #write-up h3,body.pollutant-pm10 #write-up h4,body.pollutant-pm10 #write-up h5,body.pollutant-pm10 #write-up h6{border-left-color:#f16913;}
+body.pollutant-pm10 #write-up h1:hover,body.pollutant-pm10 #write-up h2:hover,body.pollutant-pm10 #write-up h3:hover,body.pollutant-pm10 #write-up h4:hover,body.pollutant-pm10 #write-up h5:hover,body.pollutant-pm10 #write-up h6:hover{border-left-color:#d94801}
+.color,a{color:inherit;-webkit-transition:color .25s;-moz-transition:color .25s;-ms-transition:color .25s;-o-transition:color .25s;transition:color .25s}
+a{text-decoration:none}
+h1,h2,h3,h4,h5,h6{color:#525252;font-weight:normal}
+header{padding:30px 0;}
+header .content{width:960px;margin:0 auto;}
+header .content h1{margin:0;text-align:center;font-size:40px}
+header .content p.author{color:#737373;margin-top:20px;font-size:14px;text-align:center;font-style:italic}
+#vis{padding:35px 0 20px;height:600px;background-color:rgba(255,255,255,0.75);-webkit-box-shadow:0 0 10px rgba(0,0,0,0.5);-moz-box-shadow:0 0 10px rgba(0,0,0,0.5);-ms-box-shadow:0 0 10px rgba(0,0,0,0.5);-o-box-shadow:0 0 10px rgba(0,0,0,0.5);box-shadow:0 0 10px rgba(0,0,0,0.5);}
+#vis .content{width:960px;padding:0 10px;margin:0 auto;}
+#vis .content .legend-element{font-size:10px}
+#vis .content #stations{display:block;}
+#vis .content #stations > div,#vis .content #stations > nav,#vis .content #stations > ul,#vis .content #stations > li{float:left}
+#vis .content #stations:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0}
+#vis .content #stations #map-wrapper{width:522px;}
+#vis .content #stations #map-wrapper svg.map path{cursor:pointer;fill:#fff;stroke:#fff;stroke-linejoin:round;stroke-width:1px;fill-opacity:.25;stroke-opacity:.75;-webkit-transition:fill-opacity .25s,stroke-width .5s;-moz-transition:fill-opacity .25s,stroke-width .5s;-ms-transition:fill-opacity .25s,stroke-width .5s;-o-transition:fill-opacity .25s,stroke-width .5s;transition:fill-opacity .25s,stroke-width .5s;}
+#vis .content #stations #map-wrapper svg.map path:hover{fill-opacity:.5}
+#vis .content #stations #map-wrapper svg.map path.active{fill-opacity:.75;stroke-width:2px;cursor:auto}
+#vis .content #stations #map-wrapper svg.map circle.location{cursor:pointer;fill-opacity:.25;stroke-opacity:0;-webkit-transition:fill-opacity .25s,stroke-opacity .5s;-moz-transition:fill-opacity .25s,stroke-opacity .5s;-ms-transition:fill-opacity .25s,stroke-opacity .5s;-o-transition:fill-opacity .25s,stroke-opacity .5s;transition:fill-opacity .25s,stroke-opacity .5s;}
+#vis .content #stations #map-wrapper svg.map circle.location:hover{fill-opacity:.5}
+#vis .content #stations #map-wrapper svg.map circle.location.active{fill-opacity:.75;cursor:auto;stroke-width:1.5px;stroke-opacity:.75}
+#vis .content #stations #map-wrapper svg.map .legend circle.legend-element{fill:#bdbdbd;opacity:.5}
+#vis .content #stations #map-wrapper svg.map .legend text.legend-element{fill:#737373}
+#vis .content #stations #station{width:418px;margin-left:20px;position:relative;}
+#vis .content #stations #station h2{text-align:center;font-size:25px;color:#737373;font-weight:normal;margin:0;position:absolute;top:5px;left:0}
+#vis .content #stations #station #radial-wrapper svg.radial path.layer{stroke-width:1px;stroke:#fff;fill:#fff;opacity:.5;-webkit-transition:opacity .25s;-moz-transition:opacity .25s;-ms-transition:opacity .25s;-o-transition:opacity .25s;transition:opacity .25s;cursor:pointer;}
+#vis .content #stations #station #radial-wrapper svg.radial path.layer:hover,#vis .content #stations #station #radial-wrapper svg.radial path.layer.active{opacity:1}
+#vis .content #stations #station #radial-wrapper svg.radial path.layer.active{cursor:auto}
+#vis .content #stations #station #radial-wrapper svg.radial .legend path.legend-element{fill:none;stroke:#bdbdbd}
+#vis .content #stations #station #radial-wrapper svg.radial .legend text.legend-element{fill:#737373;text-anchor:middle}
+#vis .content #stations #station #tiles-wrapper svg.tiles rect{fill:#fff}
+#vis .content #pollutant-selector{clear:both;margin-top:40px;text-align:center;}
+#vis .content #pollutant-selector .pollutant{width:140px;display:inline-block;text-align:center;padding:12px 0;line-height:12px;border-top:5px solid;border-bottom:3px solid;cursor:pointer;opacity:.25;-webkit-transition:opacity .25s;-moz-transition:opacity .25s;-ms-transition:opacity .25s;-o-transition:opacity .25s;transition:opacity .25s;}
+#vis .content #pollutant-selector .pollutant:hover{opacity:.5}
+#vis .content #pollutant-selector .pollutant.active{opacity:1}
+#vis .content #pollutant-selector .pollutant sub{vertical-align:sub;font-size:.75em;display:inline-block;margin-bottom:-1em}
+#write-up{padding:35px 0 20px;color:#525252;}
+#write-up .content{width:700px;margin:0 auto;}
+#write-up .content b{font-weight:bold}
+#write-up .content i{font-style:italic}
+#write-up .content h2,#write-up .content h3,#write-up .content h4,#write-up .content h5,#write-up .content h6{border-left:solid #bdbdbd;padding-left:15px;-webkit-transition:border-left-color .25s;-moz-transition:border-left-color .25s;-ms-transition:border-left-color .25s;-o-transition:border-left-color .25s;transition:border-left-color .25s;line-height:1.25}
+#write-up .content h2{font-size:30px;margin-top:40px;margin-bottom:20px;border-left-width:5px;margin-left:-20px}
+#write-up .content h3{font-size:20px;margin-top:25px;margin-bottom:15px;border-left-width:3px;margin-left:-17px}
+#write-up .content p,#write-up .content ul{font-size:15px;line-height:1.5;margin:15px 0}
+#write-up .content sub{vertical-align:sub;font-size:.75em;display:inline-block;margin-bottom:-1em}
+#write-up .content ul{margin-left:20px;list-style:circle;}
+#write-up .content ul li b{margin-right:1em}
