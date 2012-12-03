@@ -22,40 +22,32 @@ body
   margin 0
   min-width 980px
 
-  &.pollutant-all
+  applyColor(normal, dark)
     .color,
     a
-      color rgb(66, 146, 198)
+      color normal
       &:hover
-        color rgb(33, 113, 181)
+        color dark
+    #write-up
+      h1, h2, h3, h4, h5, h6
+        border-left-color normal
+        &:hover
+          border-left-color dark
+
+  &.pollutant-all
+    applyColor(rgb(66, 146, 198), rgb(33, 113, 181))
 
   &.pollutant-no2
-    .color,
-    a
-      color rgb(65, 171, 93)
-      &:hover
-        color rgb(35, 139, 69)
+    applyColor(rgb(65, 171, 93), rgb(35, 139, 69))
 
   &.pollutant-so2
-    .color,
-    a
-      color rgb(128, 125, 186)
-      &:hover
-        color rgb(106, 81, 163)
+    applyColor(rgb(128, 125, 186), rgb(106, 81, 163))
 
   &.pollutant-pm2_5
-    .color,
-    a
-      color rgb(239, 59, 44)
-      &:hover
-        color rgb(203, 24, 29)
+    applyColor(rgb(239, 59, 44), rgb(203, 24, 29))
 
   &.pollutant-pm10
-    .color,
-    a
-      color rgb(241, 105, 19)
-      &:hover
-        color rgb(217, 72, 1)
+    applyColor(rgb(241, 105, 19), rgb(217, 72 ,1))
 
 .color,
 a
@@ -79,6 +71,13 @@ header
       margin 0
       text-align center
       font-size 40px
+
+    p.author
+      color grey
+      margin-top 20px
+      font-size 14px
+      text-align center
+      font-style italic
 
 #vis
   padding 35px 0 20px
@@ -183,11 +182,10 @@ header
       margin-top 40px
       text-align center
       .pollutant
-        width 120px
-        height 25px
+        width 140px
         display inline-block
         text-align center
-        padding 12px 0 0
+        padding 12px 0
         line-height 12px
         border-top 5px solid
         border-bottom 3px solid
@@ -200,13 +198,49 @@ header
           opacity 1
         sub
           vertical-align sub
+          font-size .75em
+          display inline-block
+          margin-bottom -1em
 
 #write-up
-  padding 20px 0
+  padding 35px 0 20px
   color darkgrey
   .content
-    width 720px
+    width 700px
     margin 0 auto
-    p
+    b
+      font-weight bold
+    i
+      font-style italic
+    h2, h3, h4, h5, h6
+      border-left solid lightgrey
+      padding-left 15px
+      transition border-left-color .25s
+      line-height 1.25
+    h2
+      font-size 30px
+      margin-top 40px
+      margin-bottom 20px
+      border-left-width 5px
+      margin-left -20px
+    h3
+      font-size 20px
+      margin-top 25px
+      margin-bottom 15px
+      border-left-width 3px
+      margin-left -17px
+    p, ul
+      font-size 15px
       line-height 1.5
       margin 15px 0
+    sub
+      vertical-align sub
+      font-size .75em
+      display inline-block
+      margin-bottom -1em
+    ul
+      margin-left 20px
+      list-style circle
+      li
+        b
+          margin-right 1em

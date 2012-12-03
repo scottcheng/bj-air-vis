@@ -52,6 +52,22 @@ body.pollutant-all .color:hover,
 body.pollutant-all a:hover {
   color: #2171b5;
 }
+body.pollutant-all #write-up h1,
+body.pollutant-all #write-up h2,
+body.pollutant-all #write-up h3,
+body.pollutant-all #write-up h4,
+body.pollutant-all #write-up h5,
+body.pollutant-all #write-up h6 {
+  border-left-color: #4292c6;
+}
+body.pollutant-all #write-up h1:hover,
+body.pollutant-all #write-up h2:hover,
+body.pollutant-all #write-up h3:hover,
+body.pollutant-all #write-up h4:hover,
+body.pollutant-all #write-up h5:hover,
+body.pollutant-all #write-up h6:hover {
+  border-left-color: #2171b5;
+}
 body.pollutant-no2 .color,
 body.pollutant-no2 a {
   color: #41ab5d;
@@ -59,6 +75,22 @@ body.pollutant-no2 a {
 body.pollutant-no2 .color:hover,
 body.pollutant-no2 a:hover {
   color: #238b45;
+}
+body.pollutant-no2 #write-up h1,
+body.pollutant-no2 #write-up h2,
+body.pollutant-no2 #write-up h3,
+body.pollutant-no2 #write-up h4,
+body.pollutant-no2 #write-up h5,
+body.pollutant-no2 #write-up h6 {
+  border-left-color: #41ab5d;
+}
+body.pollutant-no2 #write-up h1:hover,
+body.pollutant-no2 #write-up h2:hover,
+body.pollutant-no2 #write-up h3:hover,
+body.pollutant-no2 #write-up h4:hover,
+body.pollutant-no2 #write-up h5:hover,
+body.pollutant-no2 #write-up h6:hover {
+  border-left-color: #238b45;
 }
 body.pollutant-so2 .color,
 body.pollutant-so2 a {
@@ -68,6 +100,22 @@ body.pollutant-so2 .color:hover,
 body.pollutant-so2 a:hover {
   color: #6a51a3;
 }
+body.pollutant-so2 #write-up h1,
+body.pollutant-so2 #write-up h2,
+body.pollutant-so2 #write-up h3,
+body.pollutant-so2 #write-up h4,
+body.pollutant-so2 #write-up h5,
+body.pollutant-so2 #write-up h6 {
+  border-left-color: #807dba;
+}
+body.pollutant-so2 #write-up h1:hover,
+body.pollutant-so2 #write-up h2:hover,
+body.pollutant-so2 #write-up h3:hover,
+body.pollutant-so2 #write-up h4:hover,
+body.pollutant-so2 #write-up h5:hover,
+body.pollutant-so2 #write-up h6:hover {
+  border-left-color: #6a51a3;
+}
 body.pollutant-pm2_5 .color,
 body.pollutant-pm2_5 a {
   color: #ef3b2c;
@@ -76,6 +124,22 @@ body.pollutant-pm2_5 .color:hover,
 body.pollutant-pm2_5 a:hover {
   color: #cb181d;
 }
+body.pollutant-pm2_5 #write-up h1,
+body.pollutant-pm2_5 #write-up h2,
+body.pollutant-pm2_5 #write-up h3,
+body.pollutant-pm2_5 #write-up h4,
+body.pollutant-pm2_5 #write-up h5,
+body.pollutant-pm2_5 #write-up h6 {
+  border-left-color: #ef3b2c;
+}
+body.pollutant-pm2_5 #write-up h1:hover,
+body.pollutant-pm2_5 #write-up h2:hover,
+body.pollutant-pm2_5 #write-up h3:hover,
+body.pollutant-pm2_5 #write-up h4:hover,
+body.pollutant-pm2_5 #write-up h5:hover,
+body.pollutant-pm2_5 #write-up h6:hover {
+  border-left-color: #cb181d;
+}
 body.pollutant-pm10 .color,
 body.pollutant-pm10 a {
   color: #f16913;
@@ -83,6 +147,22 @@ body.pollutant-pm10 a {
 body.pollutant-pm10 .color:hover,
 body.pollutant-pm10 a:hover {
   color: #d94801;
+}
+body.pollutant-pm10 #write-up h1,
+body.pollutant-pm10 #write-up h2,
+body.pollutant-pm10 #write-up h3,
+body.pollutant-pm10 #write-up h4,
+body.pollutant-pm10 #write-up h5,
+body.pollutant-pm10 #write-up h6 {
+  border-left-color: #f16913;
+}
+body.pollutant-pm10 #write-up h1:hover,
+body.pollutant-pm10 #write-up h2:hover,
+body.pollutant-pm10 #write-up h3:hover,
+body.pollutant-pm10 #write-up h4:hover,
+body.pollutant-pm10 #write-up h5:hover,
+body.pollutant-pm10 #write-up h6:hover {
+  border-left-color: #d94801;
 }
 .color,
 a {
@@ -116,6 +196,13 @@ header .content h1 {
   margin: 0;
   text-align: center;
   font-size: 40px;
+}
+header .content p.author {
+  color: #737373;
+  margin-top: 20px;
+  font-size: 14px;
+  text-align: center;
+  font-style: italic;
 }
 #vis {
   padding: 35px 0 20px;
@@ -254,11 +341,10 @@ header .content h1 {
   text-align: center;
 }
 #vis .content #pollutant-selector .pollutant {
-  width: 120px;
-  height: 25px;
+  width: 140px;
   display: inline-block;
   text-align: center;
-  padding: 12px 0 0;
+  padding: 12px 0;
   line-height: 12px;
   border-top: 5px solid;
   border-bottom: 3px solid;
@@ -278,16 +364,68 @@ header .content h1 {
 }
 #vis .content #pollutant-selector .pollutant sub {
   vertical-align: sub;
+  font-size: 0.75em;
+  display: inline-block;
+  margin-bottom: -1em;
 }
 #write-up {
-  padding: 20px 0;
+  padding: 35px 0 20px;
   color: #525252;
 }
 #write-up .content {
-  width: 720px;
+  width: 700px;
   margin: 0 auto;
 }
-#write-up .content p {
+#write-up .content b {
+  font-weight: bold;
+}
+#write-up .content i {
+  font-style: italic;
+}
+#write-up .content h2,
+#write-up .content h3,
+#write-up .content h4,
+#write-up .content h5,
+#write-up .content h6 {
+  border-left: solid #bdbdbd;
+  padding-left: 15px;
+  -webkit-transition: border-left-color 0.25s;
+  -moz-transition: border-left-color 0.25s;
+  -ms-transition: border-left-color 0.25s;
+  -o-transition: border-left-color 0.25s;
+  transition: border-left-color 0.25s;
+  line-height: 1.25;
+}
+#write-up .content h2 {
+  font-size: 30px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  border-left-width: 5px;
+  margin-left: -20px;
+}
+#write-up .content h3 {
+  font-size: 20px;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  border-left-width: 3px;
+  margin-left: -17px;
+}
+#write-up .content p,
+#write-up .content ul {
+  font-size: 15px;
   line-height: 1.5;
   margin: 15px 0;
+}
+#write-up .content sub {
+  vertical-align: sub;
+  font-size: 0.75em;
+  display: inline-block;
+  margin-bottom: -1em;
+}
+#write-up .content ul {
+  margin-left: 20px;
+  list-style: circle;
+}
+#write-up .content ul li b {
+  margin-right: 1em;
 }
