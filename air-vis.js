@@ -222,7 +222,7 @@ var vis = function(data) {
     };
 
     controller.selectStation = function(id, name) {
-      d3.select('#station-name').text(name);
+      d3.select('#station-name').html(name);
 
       applyOpt({
         scope: 'station',
@@ -331,7 +331,7 @@ var vis = function(data) {
           return d.y * ratio;
         })
         .on('click', function(d) {
-          controller.selectStation(d.id, d.full_name);
+          controller.selectStation(d.id, d.full_name + '<br />' + d.eng_name);
           d3.event.stopPropagation();
         });
     mapSVG.on('click', function() {

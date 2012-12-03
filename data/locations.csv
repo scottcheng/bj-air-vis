@@ -1,27 +1,27 @@
-id,short_name,full_name
-1,ds,东城东四
-2,tt,东城天坛
-3,gy,西城官园
-4,wsxg,西城万寿西宫
-5,atzx,朝阳奥体中心
-6,nzg,朝阳农展馆
-7,wl,海淀万柳
-8,bbxq,海淀北部新区
-9,zwy,海淀北京植物园
-10,fthy,丰台花园
-11,yg,丰台云岗
-12,gc,石景山古城
-13,yz,亦庄开发区
-15,lx,房山良乡
-16,tzq,通州新城
-17,syq,顺义新城
-18,dl,昌平定陵
-19,cpq,昌平镇
-20,dxq,大兴黄村镇
-21,yf,大兴榆垡
-22,pgq,平谷镇
-23,hrq,怀柔镇
-24,myx,密云镇
-25,mysk,密云水库
-26,yqx,延庆镇
-27,bdl,延庆八达岭
+id,short_name,full_name,eng_name
+1,ds,东城东四,Dongsi
+2,tt,东城天坛,Temple of Heaven
+3,gy,西城官园,Guanyuan
+4,wsxg,西城万寿西宫,Wanshou West Palace
+5,atzx,朝阳奥体中心,Olympic Park
+6,nzg,朝阳农展馆,Agricultural Exhibition Hall
+7,wl,海淀万柳,Wanliu
+8,bbxq,海淀北部新区,Haidian Northern New Area
+9,zwy,海淀北京植物园,Beijing Botanical Garden
+10,fthy,丰台花园,Fengtai Garden
+11,yg,丰台云岗,Yungang
+12,gc,石景山古城,Shijingshan Gucheng
+13,yz,亦庄开发区,Yizhuang
+15,lx,房山良乡,Liangxiang
+16,tzq,通州新城,Shunyi New Town
+17,syq,顺义新城,Shunyi New Town
+18,dl,昌平定陵,Dingling
+19,cpq,昌平镇,Changping Town
+20,dxq,大兴黄村镇,Huangcun Town
+21,yf,大兴榆垡,Yufa
+22,pgq,平谷镇,Pinggu Town
+23,hrq,怀柔镇,Huairou Town
+24,myx,密云镇,Miyun Town
+25,mysk,密云水库,Miyun Reservoir
+26,yqx,延庆镇,Yanqing Town
+27,bdl,延庆八达岭,Badaling
