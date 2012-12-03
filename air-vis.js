@@ -331,7 +331,7 @@ var vis = function(data) {
           return d.y * ratio;
         })
         .on('click', function(d) {
-          controller.selectStation(d.id, d.full_name + '<br />' + d.eng_name);
+          controller.selectStation(d.id, d.eng_name + '<br />' + d.full_name);
           d3.event.stopPropagation();
         });
     mapSVG.on('click', function() {
