@@ -4,8 +4,9 @@ html
     title Visualization of Beijing Air Pollution
     meta(charset='utf-8')
     meta(name='author', content='Scott Cheng')
-    meta(name='description', content='')
+    meta(name='description', content='Visualization of the intensity distribution of several major pollutants in Beijing over two weeks')
     link(href='style.css', rel='stylesheet')
+    link(rel='canonical', href='http://scottcheng.github.com/bj-air-vis/')
   body
     header
       .content
@@ -31,7 +32,7 @@ html
 
     section#write-up
       .content
-        p This visualization demonstrates the intensity of several major pollutants in Beijing during October 17 and October 30, 2012.
+        p This visualization demonstrates the intensity distribution of several major pollutants in Beijing during October 17 and October 30, 2012.
 
         p
           |  This is one of 
@@ -86,7 +87,8 @@ html
             | Encode time (24 hours) in a circle, and stack the concentration of each pollutant by hour. From this chart, users can see the trend of pollution intensity in a day (both on a by-pollutant basis and of all pollutants), and a rough level of overall pollution at a certain monitor station.
           li
             b “Tiles” Chart
-            | A 14*24 table, where each cell displays the pollution concentration during a given hour in a given day. This is closest to the raw data. BTW, forgive my ignorance, but what is the official name for this type of charts?
+            | A 14*24 table, where each cell displays the pollution concentration during a given hour in a given day. This is closest to the raw data.
+            //- | BTW, forgive my ignorance, but what is the official name for this type of charts?
 
         h2#visuals Visuals
 
@@ -104,7 +106,7 @@ html
           span(style='color:rgb(189, 189, 189)') greys 
           | for legends and text. All the colors are taken from 
           a(href='http://colorbrewer2.org/') ColorBrewer 
-          | – It’s 
+          | – it’s 
           i really 
           | good!
 
@@ -118,9 +120,9 @@ html
 
         p There are two dimensions to select / filter in this visualization: station and pollutant.
 
-        p You can select a station by clicking on the corresponding circle on the map, or select “all stations” by clicking on the rest of the map.
+        p You can select a station by clicking on the corresponding circle on the map, or select “all stations” by clicking on the rest of the map. When a station is selected, the two charts on the right display data sampled at that monitor station; otherwise, they display mean value of all stations.
 
-        p You can select a type of pollutant by clicking on the pollutant name on the bottom, or by clicking on the corresponding circular area in the stacked area chart.
+        p You can select a type of pollutant by clicking on the pollutant name on the bottom, or by clicking on the corresponding circular area in the stacked area chart. When a pollutant type is selected, the map and the tiles only display data of that specific pollutant, and the corresponding layer in the area chart is highlighted; otherwise, the map and the tiles display aggregate value of all pollutants.
 
         h2#abandoned What My Visualization Does Not Have
 
@@ -144,7 +146,7 @@ html
           | , or 
           | grab the 
           a(href='https://github.com/scottcheng/bj-air-vis/archive/gh-pages.zip') source
-          | !
+          | ! I’m fairly new to D3, and I’m open to any criticism and / or comments on my code.
 
         //- p
           | Check out
@@ -160,17 +162,45 @@ html
           | Proudly powered by 
           a(href='http://d3js.org/') D3.js
 
-    a(href='https://github.com/scottcheng/bj-air-vis')
-      img(
-        style='position: absolute; top: 0; right: 0; border: 0;',
-        src='https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png',
-        alt='Fork me on GitHub'
-      )
+    #social
+
+      .social-button-wrapper
+        .g-plusone(data-size='medium', data-annotation='none')
+
+      .social-button-wrapper
+        a.twitter-share-button(
+          href='https://twitter.com/share',
+          data-url='http://scottcheng.github.com/bj-air-vis/',
+          data-counturl='http://scottcheng.github.com/bj-air-vis/',
+          data-count='none'
+        ) Tweet
+
+      .social-button-wrapper
+        iframe(
+          src='http://ghbtns.com/github-btn.html?user=scottcheng&repo=bj-air-vis&type=fork',
+          allowtransparency='true',
+          frameborder='0',
+          scrolling='0',
+          width='53px',
+          height='20px'
+        )
+
 
     script(src='lib/d3.v2.min.js')
     script(src='lib/colorbrewer.js')
     script(src='air-vis.js')
     script
+      // twitter button
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+
+      // google +1 button
+      (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+      })();
+
+      // ga
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-33401065-2']);
       _gaq.push(['_trackPageview']);
