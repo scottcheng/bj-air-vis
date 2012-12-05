@@ -37,6 +37,7 @@ header .content p.author{color:#737373;margin-top:20px;font-size:14px;text-align
 #vis{padding:35px 0 20px;height:600px;background-color:rgba(255,255,255,0.75);-webkit-box-shadow:0 0 10px rgba(0,0,0,0.5);-moz-box-shadow:0 0 10px rgba(0,0,0,0.5);-ms-box-shadow:0 0 10px rgba(0,0,0,0.5);-o-box-shadow:0 0 10px rgba(0,0,0,0.5);box-shadow:0 0 10px rgba(0,0,0,0.5);}
 #vis .content{width:960px;padding:0 10px;margin:0 auto;}
 #vis .content .legend-element{font-size:10px}
+#vis .content text.legend-element{fill:#737373}
 #vis .content #stations{display:block;}
 #vis .content #stations > div,#vis .content #stations > nav,#vis .content #stations > ul,#vis .content #stations > li{float:left}
 #vis .content #stations:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0}
@@ -48,14 +49,13 @@ header .content p.author{color:#737373;margin-top:20px;font-size:14px;text-align
 #vis .content #stations #map-wrapper svg.map circle.location:hover{fill-opacity:.5}
 #vis .content #stations #map-wrapper svg.map circle.location.active{fill-opacity:.75;cursor:auto;stroke-width:1.5px;stroke-opacity:.75}
 #vis .content #stations #map-wrapper svg.map .legend circle.legend-element{fill:#bdbdbd;opacity:.5}
-#vis .content #stations #map-wrapper svg.map .legend text.legend-element{fill:#737373}
 #vis .content #stations #station{width:418px;margin-left:20px;position:relative;}
 #vis .content #stations #station h2{font-size:24px;color:#737373;font-weight:normal;margin:0;position:absolute;top:3px;left:0;max-width:360px;line-height:1.25}
 #vis .content #stations #station #radial-wrapper svg.radial path.layer{stroke-width:1px;stroke:#fff;fill:#fff;opacity:.5;-webkit-transition:opacity .25s;-moz-transition:opacity .25s;-ms-transition:opacity .25s;-o-transition:opacity .25s;transition:opacity .25s;cursor:pointer;}
 #vis .content #stations #station #radial-wrapper svg.radial path.layer:hover,#vis .content #stations #station #radial-wrapper svg.radial path.layer.active{opacity:1}
 #vis .content #stations #station #radial-wrapper svg.radial path.layer.active{cursor:auto}
 #vis .content #stations #station #radial-wrapper svg.radial .legend path.legend-element{fill:none;stroke:#bdbdbd}
-#vis .content #stations #station #radial-wrapper svg.radial .legend text.legend-element{fill:#737373;text-anchor:middle}
+#vis .content #stations #station #radial-wrapper svg.radial .legend text.legend-element{text-anchor:middle}
 #vis .content #stations #station #tiles-wrapper svg.tiles rect{fill:#fff}
 #vis .content #pollutant-selector{clear:both;margin-top:40px;text-align:center;}
 #vis .content #pollutant-selector .pollutant{width:140px;display:inline-block;text-align:center;padding:12px 0;line-height:12px;border-top:5px solid;border-bottom:3px solid;cursor:pointer;opacity:.25;-webkit-transition:opacity .25s;-moz-transition:opacity .25s;-ms-transition:opacity .25s;-o-transition:opacity .25s;transition:opacity .25s;color:#525252;}
