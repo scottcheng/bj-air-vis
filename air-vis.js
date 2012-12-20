@@ -196,6 +196,8 @@ var vis = function(data) {
       (opt.scope !== undefined) && (state.scope = opt.scope);
       (opt.id !== undefined) && (state.id = opt.id);
       (opt.pollutant !== undefined) && (state.pollutant = opt.pollutant);
+
+      ixHinter.stop();
     };
 
     var render = function() {
@@ -213,6 +215,7 @@ var vis = function(data) {
       d3.select('#station-name').text('All Stations');
       d3.select('body').attr('class', 'pollutant-all');
       render();
+      ixHinter.start();
     };
 
     controller.deselectStation = function() {
@@ -818,6 +821,35 @@ var vis = function(data) {
     };
 
     return pollutantSelector;
+  })();
+
+  var ixHinter = (function() {
+    var ixHinter = {};
+
+    var to;
+
+    ixHinter.start = function() {
+      to = window.setTimeout(function() {
+        show();
+      }, 3000);
+    };
+
+    ixHinter.stop = function() {
+      window.clearTimeout(to);
+      window.setTimeout(function() {
+        hide();
+      }, 2000);
+    };
+
+    var show = function() {
+      d3.select('#ix-hint').classed('active', true);
+    };
+
+    var hide = function() {
+      d3.select('#ix-hint').classed('active', false);
+    };
+
+    return ixHinter;
   })();
 
   // initialize visualization

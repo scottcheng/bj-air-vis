@@ -28,6 +28,9 @@ body
       color normal
       &:hover
         color dark
+    #ix-hint
+      background-color rgba(normal, .8)
+      color #fff
     #write-up
       h1, h2, h3, h4, h5, h6
         border-left-color normal
@@ -78,6 +81,21 @@ header
       font-size 14px
       text-align center
       font-style italic
+
+#ix-hint
+  position fixed
+  bottom -50px
+  left 0
+  right 0
+  background-color rgba(#000, .5)
+  text-align center
+  color grey
+  padding 15px 0
+  color #fff
+  transition background-color .25s, bottom 1s
+  text-shadow 0 -1px rgba(#000, .25)
+  &.active
+    bottom 0
 
 #vis
   padding 35px 0 20px
