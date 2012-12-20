@@ -205,8 +205,11 @@ var vis = function(data) {
       pollutantSelector.render(state);
     };
 
-    controller.init = function(opt) {
-      state = opt;
+    controller.init = function() {
+      state = {
+        scope: 'all',
+        pollutant: 'all'
+      };
       d3.select('#station-name').text('All Stations');
       d3.select('body').attr('class', 'pollutant-all');
       render();
@@ -818,10 +821,7 @@ var vis = function(data) {
   })();
 
   // initialize visualization
-  controller.init({
-    scope: 'all',
-    pollutant: 'all'
-  });
+  controller.init();
 };
 
 
@@ -847,6 +847,12 @@ d3.csv('data/values.csv', function(values) {
             i--;
           }
         }
+        d3.select('#loading')
+          .transition()
+          .duration(1000)
+          .style('opacity', 0)
+          .remove();
+        console
         vis({
           values: values,
           locations: locations,

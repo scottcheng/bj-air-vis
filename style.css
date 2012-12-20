@@ -35,7 +35,8 @@ header .content{width:960px;margin:0 auto;}
 header .content h1{margin:0;text-align:center;font-size:40px}
 header .content p.author{color:#737373;margin-top:20px;font-size:14px;text-align:center;font-style:italic}
 #vis{padding:35px 0 20px;height:600px;background-color:rgba(255,255,255,0.75);-webkit-box-shadow:0 0 10px rgba(0,0,0,0.5);-moz-box-shadow:0 0 10px rgba(0,0,0,0.5);-ms-box-shadow:0 0 10px rgba(0,0,0,0.5);-o-box-shadow:0 0 10px rgba(0,0,0,0.5);box-shadow:0 0 10px rgba(0,0,0,0.5);}
-#vis .content{width:960px;padding:0 10px;margin:0 auto;}
+#vis .content{width:960px;padding:0 10px;margin:0 auto;position:relative;}
+#vis .content #loading{text-align:center;position:absolute;left:0;right:0;top:260px;font-size:50px;color:#737373}
 #vis .content .legend-element{font-size:10px}
 #vis .content text.legend-element{fill:#737373}
 #vis .content #stations{display:block;}
