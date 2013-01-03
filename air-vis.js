@@ -884,7 +884,6 @@ d3.csv('data/values.csv', function(values) {
           .duration(1000)
           .style('opacity', 0)
           .remove();
-        console
         vis({
           values: values,
           locations: locations,
